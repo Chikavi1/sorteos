@@ -9,9 +9,9 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "It's Over 9000!", // set false to total remove
+            'title'        => "Sorteos Osorio", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'For those who helped create the Genki Dama', // set false to total remove
+            'description'  => 'Invierte,participa y se el próximo afortunado ganador en nuestros eventos.', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [],
             'canonical'    => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
@@ -36,12 +36,12 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'Over 9000 Thousand!', // set false to total remove
-            'description' => 'For those who helped create the Genki Dama', // set false to total remove
+            'title'       => 'Sorteos Osorio', // set false to total remove
+            'description' => 'Invierte,participa y se el próximo afortunado ganador en nuestros eventos.', // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
-            'images'      => [],
+            'images'      => ["https://i.ibb.co/2K32gvM/dfc7ad37-9ea6-48f6-b96b-20f2c2e1664a.jpg"],
         ],
     ],
     'twitter' => [
@@ -58,11 +58,11 @@ return [
          * The default configurations to be used by the json-ld generator.
          */
         'defaults' => [
-            'title'       => 'Over 9000 Thousand!', // set false to total remove
-            'description' => 'For those who helped create the Genki Dama', // set false to total remove
+            'title'       => 'Sorteos Osorio', // set false to total remove
+            'description' => 'Invierte,participa y se el próximo afortunado ganador en nuestros eventos.', // set false to total remove
             'url'         => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
-            'images'      => [],
+            'images'      => ["https://i.ibb.co/2K32gvM/dfc7ad37-9ea6-48f6-b96b-20f2c2e1664a.jpg"],
         ],
     ],
 ];

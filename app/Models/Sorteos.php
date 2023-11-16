@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sorteos extends Model
 {
+    protected $table = 'Sorteos';
+
     use HasFactory;
     protected $fillable = [
         'name',

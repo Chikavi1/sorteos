@@ -13,8 +13,10 @@
         href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
         rel="stylesheet"
       />
+      {!! SEO::generate() !!}
     </head>
-<body>
+
+    <body>
 
 {{--
     <div

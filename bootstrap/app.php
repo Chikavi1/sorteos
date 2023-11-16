@@ -14,6 +14,7 @@
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
+$app->register(Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,5 @@ $app->singleton(
 |
 */
 
-$app->register(Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class);
 
 return $app;

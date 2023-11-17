@@ -13,23 +13,23 @@ class SorteosController extends Controller
 {
     public function index(){
         $sorteos = Sorteos::all();
-        SEO::opengraph()->addImage(asset('img/index.png'));
-        SEO::twitter()->setImage(asset('img/index.png'));
+        SEO::opengraph()->addImage(asset('img/caca.png'));
+        SEO::twitter()->setImage(asset('img/caca.png'));
         return view('admin.index',compact('sorteos'));
       }
 
       public function landing(){
         $sorteo = Sorteos::where('status',2)->first();
         // dd($sorteo);
-        SEO::opengraph()->addImage(asset('img/index.png'));
-        SEO::twitter()->setImage(asset('img/index.png'));
+        SEO::opengraph()->addImage(asset('img/caca.png'));
+        SEO::twitter()->setImage(asset('img/caca.png'));
         return view('welcome',compact('sorteo'));
       }
 
     public function book(Request $request){
         // dd($request->all());
-        SEO::opengraph()->addImage(asset('img/index.png'));
-        SEO::twitter()->setImage(asset('img/index.png'));
+        SEO::opengraph()->addImage(asset('img/caca.png'));
+        SEO::twitter()->setImage(asset('img/caca.png'));
         $tickets = explode(",", $request->ntid);
         if($request->ntid != null){
 
@@ -67,8 +67,8 @@ class SorteosController extends Controller
 
 
       public function show($id){
-        SEO::opengraph()->addImage(asset('img/index.png'));
-        SEO::twitter()->setImage(asset('img/index.png'));
+        SEO::opengraph()->addImage(asset('img/caca.png'));
+        SEO::twitter()->setImage(asset('img/caca.png'));
         $sorteo = Sorteos::where('status',2)->first();
         $tickets = Tickets::where('id_sorteo',$sorteo->id)->pluck('folio');
         $ticketsSelected = [];
@@ -88,8 +88,8 @@ class SorteosController extends Controller
       }
 
       public function verify(Request $request){
-        SEO::opengraph()->addImage(asset('img/index.png'));
-        SEO::twitter()->setImage(asset('img/index.png'));
+        SEO::opengraph()->addImage(asset('img/caca.png'));
+        SEO::twitter()->setImage(asset('img/caca.png'));
         $data = [];
         $nofound = false;
         $sorteo = Sorteos::where('status',2)->first();
@@ -120,15 +120,15 @@ class SorteosController extends Controller
       }
 
       public function sorteo($id){
-        SEO::opengraph()->addImage(asset('img/index.png'));
-        SEO::twitter()->setImage(asset('img/index.png'));
+        SEO::opengraph()->addImage(asset('img/caca.png'));
+        SEO::twitter()->setImage(asset('img/caca.png'));
         $sorteo = Sorteos::findOrFail($id);
         return view('admin.show',compact('sorteo'));
       }
 
       public function tickets($id){
-        SEO::opengraph()->addImage(asset('img/index.png'));
-        SEO::twitter()->setImage(asset('img/index.png'));
+        SEO::opengraph()->addImage(asset('img/caca.png'));
+        SEO::twitter()->setImage(asset('img/caca.png'));
         $sorteo = Sorteos::findOrFail($id);
         $tickets = Tickets::where('id_sorteo',$id)->get();
         $cantidad = $tickets->where('status',2)->count();

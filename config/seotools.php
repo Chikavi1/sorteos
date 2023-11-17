@@ -41,7 +41,7 @@ return [
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
-            'images'      => ["https://i.ibb.co/60fjrcm/db4d5c08-a49e-46c3-a2ca-c73944fa161c.jpg"],
+            'images'      => ["https://i.ibb.co/Z2PdgMh/tabla-fondo-radi-pets.png"],
         ],
     ],
     'twitter' => [
@@ -62,7 +62,7 @@ return [
             'description' => 'Invierte,participa y se el próximo afortunado ganador en nuestros eventos.', // set false to total remove
             'url'         => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
-            'images'      => ["https://i.ibb.co/60fjrcm/db4d5c08-a49e-46c3-a2ca-c73944fa161c.jpg"],
+            'images'      => ["https://i.ibb.co/Z2PdgMh/tabla-fondo-radi-pets.png"],
         ],
     ],
 ];

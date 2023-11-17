@@ -148,9 +148,9 @@
         </h2>
         <div class="lg:mt-0 lg:flex-shrink-0">
             <div class=" inline-flex rounded-md shadow">
-                <button type="button" class="py-4 px-6  bg-green-600 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                <a href="https://api.whatsapp.com/send?phone=5213332707927&text=Hola,%20te%20mando%20el%20comprobante%20de%20pago" type="button" class="py-4 px-6  bg-green-600 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                     Enviar whatsapp
-                </button>
+                </a>
             </div>
         </div>
     </div>

@@ -164,7 +164,7 @@
     <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
       <img
         alt="Office"
-        src="https://www.sorteososorio.com/wp-content/uploads/2022/11/512px-Banco_Santander_Logotipo.png"
+        src="{{asset('img/santander.png')}}"
         class="p-6 h-42"
       />
 
@@ -201,7 +201,7 @@
     <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
       <img
         alt="Office"
-        src="https://www.sorteososorio.com/wp-content/uploads/2022/11/bbva-logo-10.png"
+        src="{{asset('img/bbva.png')}}"
         class="p-6 h-42"
       />
 

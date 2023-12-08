@@ -60,6 +60,15 @@ class SorteosController extends Controller
         }
     }
 
+    public function login(Request $request){
+        if($request->token === '199810'){
+            session()->put('login', 'true');
+            return redirect('/sos-admin');
+        }else{
+            return redirect('sos-admin')->with('error', 'Token incorrecto.');
+        }
+    }
+
 
     public function create(){
         return view('admin.create');
@@ -117,9 +126,6 @@ class SorteosController extends Controller
         return view('public.verify',compact('data','nofound'));
       }
 
-      public function login(){
-        return view('admin.login');
-      }
 
       public function sorteo($id){
         SEO::opengraph()->addImage(asset('img/caca.png'));

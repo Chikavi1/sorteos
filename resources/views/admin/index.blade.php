@@ -1,4 +1,17 @@
 @include('layouts.app-admin')
+@if ($message = Session::get('success'))
+<div class="bg-green-600 px-4 py-3 text-white">
+    <p class="text-center text-sm font-medium">
+        {{ $message }}
+    </p>
+  </div>
+@elseif($message = Session::get('error'))
+<div class="bg-red-600 px-4 py-3 text-white">
+    <p class="text-center text-sm font-medium">
+        {{ $message }}
+    </p>
+  </div>
+@endif
 
 @if(!session()->has('login'))
 <section class="bg-gray-50">
@@ -8,10 +21,11 @@
         class="w-full px-0 pt-5 pb-6 mx-auto mt-4 mb-0 space-y-4 bg-transparent border-0 border-gray-200 rounded-lg md:bg-white md:border sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 md:px-6 sm:mt-8 sm:mb-5"
       >
         <h1 class="mb-5 text-xl font-light text-left text-gray-800 sm:text-center">Ingresar</h1>
-        <form class="pb-1 space-y-4">
-          <label class="block">
-            <span class="block mb-1 text-xs font-medium text-gray-700">Ingresa Token</span>
-            <input class="w-full" placeholder="*** ***" inputmode="email" required />
+        <form method="POST" action="{{ route('admin.login') }}" action  class="pb-1 space-y-4">
+            @csrf
+            <label class="block">
+            <span  class="block mb-1 text-xs font-medium text-gray-700">Ingresa Token</span>
+            <input name="token" class="w-full" placeholder="*** ***" inputmode="email" required />
           </label>
 
           <div class="flex items-center justify-between">

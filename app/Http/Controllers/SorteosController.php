@@ -69,13 +69,15 @@ class SorteosController extends Controller
       public function show($id){
         SEO::opengraph()->addImage(asset('img/caca.png'));
         SEO::twitter()->setImage(asset('img/caca.png'));
-        $sorteo = Sorteos::where('status',2)->first();
-        $tickets = Tickets::where('id_sorteo',$sorteo->id)->pluck('folio');
-        $ticketsSelected = [];
-        foreach($tickets as &$value) {
-            $str = ltrim($value, "0");
-            array_push($ticketsSelected,$str);
+        $sorteo = Sorteos::where('status',3)->first();
+        if($sorteo !=  null){
+            $tickets = Tickets::where('id_sorteo',$sorteo->id)->pluck('folio');
+            foreach($tickets as &$value) {
+                $str = ltrim($value, "0");
+                array_push($ticketsSelected,$str);
+            }
         }
+        $ticketsSelected = [];
 
 
         $tickets = json_encode($ticketsSelected,true);

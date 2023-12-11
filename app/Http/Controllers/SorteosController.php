@@ -79,6 +79,7 @@ class SorteosController extends Controller
         SEO::opengraph()->addImage(asset('img/caca.png'));
         SEO::twitter()->setImage(asset('img/caca.png'));
         $sorteo = Sorteos::where('status',2)->first();
+        $ticketsSelected = [];
 
         if($sorteo !=  null){
             $tickets = Tickets::where('id_sorteo',$sorteo->id)->pluck('folio');
@@ -87,7 +88,6 @@ class SorteosController extends Controller
                 array_push($ticketsSelected,$str);
             }
         }
-        $ticketsSelected = [];
 
 
         $tickets = json_encode($ticketsSelected,true);

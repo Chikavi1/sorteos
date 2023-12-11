@@ -19,7 +19,7 @@
       <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
           alt="Office"
-          src="https://www.sorteososorio.com/wp-content/uploads/2022/11/512px-Banco_Santander_Logotipo.png"
+          src="https://sorteososorio.com/img/santander.png"
           class="p-6 h-42"
         />
 

@@ -40,4 +40,5 @@ Route::get('/success',[SorteosController::class,'success'])->name('sorteos.succe
 Route::post('/sorteo-status',[SorteosController::class,'changeStatus'])->name('admin.changeStatus');
 Route::post('/sorteo-status-ticket',[SorteosController::class,'changeStatusTicket'])->name('admin.changeStatusTicket');
 
+Route::get('/metodospago',[SorteosController::class,'pagos'])->name('sorteos.success');
 

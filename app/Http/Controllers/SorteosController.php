@@ -74,6 +74,10 @@ class SorteosController extends Controller
         return view('admin.create');
     }
 
+    public function pagos(){
+        return view('public.pagos');
+    }
+
 
       public function show($id){
         SEO::opengraph()->addImage(asset('img/caca.png'));

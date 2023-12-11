@@ -56,7 +56,7 @@
       <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
           alt="Office"
-          src="https://www.sorteososorio.com/wp-content/uploads/2022/11/bbva-logo-10.png"
+          src="https://sorteososorio.com/img/bbva.png"
           class="p-6 h-42"
         />
 

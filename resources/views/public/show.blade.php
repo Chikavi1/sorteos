@@ -62,7 +62,7 @@
 
       <div  class="col-span-12 md:col-span-5">
           <div class="p-4 sm:p-6">
-              <h2 class="text-xl md:text-2xl my-4" style="color:orange">Super promoción</h2>
+              <h2 class="text-xl md:text-2xl my-4" style="color:orange">¡Super promoción!</h2>
               <a href="#">
               <h3 class="text-lg font-medium text-gray-900">
                   {{$sorteo->title}}

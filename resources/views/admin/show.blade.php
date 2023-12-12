@@ -6,7 +6,7 @@
         <div  class="container max-w-2xl mx-auto shadow-md md:w-3/4">
             <div class="grid grid-cols-12 my-4">
                 @if($sorteo->status == 1)
-                <div class="col-span-2 col-start-9">
+                <div class="col-span-3 col-start-6 md:col-start-9 md:col-span-2">
                     <form method="POST" action="{{ route('admin.changeStatus') }}" >
                         @csrf
                         <input type="hidden" name="id" value="{{$sorteo->id}}" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="ingresa contraseña para eliminar"/>
@@ -14,7 +14,7 @@
                         <button class="bg-red-700 text-white px-4 py-2 rounded-lg" type="submit">Eliminar</button>
                     </form>
                 </div>
-                <div class="col-span-1">
+                <div class="col-span-3 md:col-span-1">
                     <form method="POST" action="{{ route('admin.changeStatus') }}" >
                         @csrf
                         <input type="hidden" name="id" value="{{$sorteo->id}}" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="ingresa contraseña para eliminar"/>
@@ -23,7 +23,7 @@
                     </form>
                 </div>
                 @elseif($sorteo->status == 2)
-                <div class="col-span-1 col-start-11">
+                <div class="col-span-1 col-start-10">
                     <form method="POST" action="{{ route('admin.changeStatus') }}" >
                         @csrf
                         <input type="hidden" name="id" value="{{$sorteo->id}}" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="ingresa contraseña para eliminar"/>

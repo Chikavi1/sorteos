@@ -90,33 +90,52 @@
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                                   @if($item->status == 2)
-                                        <span class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
-                                            <span aria-hidden="true" class="absolute inset-0 bg-green-200 rounded-full opacity-50">
-                                            </span>
-                                            <span class="relative">
-                                                Pagado
-                                            </span>
-                                        </span>
-                                    @else
-                                    {{-- form --}}
+
 
                                     <form method="POST" action="{{ route('admin.changeStatusTicket') }}" >
                                         @csrf
                                         <input type="hidden" name="id" value="{{$item->id}}" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="ingresa contraseña para eliminar"/>
-                                        <input type="hidden" name="type" value="2" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="ingresa contraseña para eliminar"/>
-                                        <button type="submit">
-                                            <span class="relative inline-block px-3 py-1 font-semibold leading-tight text-red-900">
-                                                <span aria-hidden="true" class="absolute inset-0 bg-red-200 rounded-full opacity-50">
+                                            @if($item->status == 0)
+                                            <input type="hidden" name="type" value="1" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="ingresa contraseña para eliminar"/>
+                                            <button type="submit">
+                                                <span class="relative inline-block px-3 py-1 font-semibold leading-tight text-red-900">
+                                                    <span aria-hidden="true" class="absolute inset-0 bg-red-200 rounded-full opacity-50">
+                                                    </span>
+                                                    <span class="relative">
+                                                        Eliminado
+                                                    </span>
                                                 </span>
-                                                <span class="relative">
-                                                    Pendiente
+                                            </button>
+                                            @elseif($item->status == 1)
+                                            <input type="hidden" name="type" value="2" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="ingresa contraseña para eliminar"/>
+                                            <button type="submit">
+                                                <span class="relative inline-block px-3 py-1 font-semibold leading-tight text-gray-500">
+                                                    <span aria-hidden="true" class="absolute inset-0 bg-gray-200 rounded-full opacity-50">
+                                                    </span>
+                                                    <span class="relative">
+                                                        Pendiente
+                                                    </span>
                                                 </span>
-                                            </span>
-                                        </button>
+                                            </button>
+                                            @elseif($item->status == 2)
+                                            <input type="hidden" name="type" value="0" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="ingresa contraseña para eliminar"/>
+                                            <button type="submit">
+                                                <span class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
+                                                    <span aria-hidden="true" class="absolute inset-0 bg-green-200 rounded-full opacity-50">
+                                                    </span>
+                                                    <span class="relative">
+                                                        Pagado
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        @else
+
+
+
+                                        @endif
+
                                     </form>
 
-                                    @endif
                                 </td>
                             </tr>
                         @endforeach

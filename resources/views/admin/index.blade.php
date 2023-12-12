@@ -81,7 +81,7 @@
                                                     <img alt="profil" src="{{ URL::asset('public/photos/'.$sorteo->photo) }}" class="mx-auto object-cover rounded-full h-10 w-10 "/>
                                             </div>
                                             <div class="ml-3">
-                                                <a target="_blank" href="/sos/{{$sorteo->id}}" class="relative block">
+                                                <a  href="/sos/{{$sorteo->id}}" class="relative block">
 
                                                     <p class="text-gray-900 whitespace-no-wrap">
                                                         {{$sorteo->name}}

@@ -7,7 +7,7 @@
 
     @if ($message = Session::get('success'))
 
-    <a target="_blank" href="{{ $message }}" class="text-center mx-4 w-full md:w-auto btn bg-green-900 px-4 py-2 text-white rounded-xl">Enviar WhatsApp</a>
+    <a  href="{{ $message }}" class="text-center mx-4 w-full md:w-auto btn bg-green-900 px-4 py-2 text-white rounded-xl">Enviar WhatsApp</a>
     @endif
 
 </div>

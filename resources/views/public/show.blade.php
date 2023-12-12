@@ -7,11 +7,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 @if($sorteo != null)
 
-
-
 {{-- footer --}}
-
-
   <div class="grid grid-cols-12 gap-4 mx-3">
 
       <div class="col-span-12 md:col-span-5 md:col-start-2 md:mt-4">
@@ -88,9 +84,9 @@
   </div>
 
 
-  <div class="grid grid-cols-12">
+  <div class="grid grid-cols-12"  id="inputrandom">
       <div class="col-span-4 col-start-5">
-          <select onchange="random(this)" id="inputrandom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <select  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               <option selected>Seleccionar aleatorio</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -98,6 +94,7 @@
               <option value="4">4</option>
               <option value="5">5</option>
           </select>
+          <p onclick="random()" class="text-center bg-black px-4 py-2 text-white">Seleccionar</p>
 
       </div>
   </div>
@@ -249,10 +246,14 @@
     @endif
     }
 
-    function random(e){
-        createRandom($(e).find(":checked").val());
-            $('#inputrandom').addClass('hidden');
-            $('#resetbtn').removeClass('hidden');
+    function random(){
+        if($("#inputrandom").find(":checked").val() == "Seleccionar aleatorio"){
+            alert('Ingresa un número primero');
+        }else{
+            createRandom($("#inputrandom").find(":checked").val());
+                $('#inputrandom').addClass('hidden');
+                $('#resetbtn').removeClass('hidden');
+        }
     }
 
     initTickets()
@@ -373,7 +374,7 @@
       </div>
       <div class="flex">
         <p class="mr-1 text-gray-800">Dirección:</p>
-        <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">
+        <a href="https://www.google.com/maps"  rel="noopener noreferrer" aria-label="Our address" title="Our address" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">
           Guadalajara, Jalisco, México.
         </a>
       </div>

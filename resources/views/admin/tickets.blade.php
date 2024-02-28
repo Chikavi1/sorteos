@@ -86,7 +86,8 @@
 
                                 <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        {{$item->created_at}}
+                                        {{   Carbon\Carbon::parse($item->created_at)->formatLocalized('%d %B %Y ') }} <br>
+                                        {{ Carbon\Carbon::parse($item->created_at)->isoFormat('h:mm a') }}
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">

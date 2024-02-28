@@ -86,8 +86,8 @@ class SorteosController extends Controller
         $ticketsSelected = [];
 
         if($sorteo !=  null){
-            $tickets = Tickets::where('id_sorteo',$sorteo->id)->pluck('folio');
-            foreach($tickets as &$value) {
+            $tickets = Tickets::where('id_sorteo',$sorteo->id)->where('status','!=',0)->pluck('folio');
+            foreach($tickets as  $value) {
                 $str = ltrim($value, "0");
                 array_push($ticketsSelected,$str);
             }
@@ -103,6 +103,9 @@ class SorteosController extends Controller
         return view('public.privacy');
       }
 
+      public function terms(){
+        return view('public.terms');
+      }
       public function verify(Request $request){
         SEO::opengraph()->addImage(asset('img/caca.png'));
         SEO::twitter()->setImage(asset('img/caca.png'));

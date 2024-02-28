@@ -17,7 +17,7 @@
                     {{ Carbon\Carbon::parse($sorteo->end_date)->formatLocalized('%d %B %Y ') }}
                 </h3>
                 <h3 class="text-lg font-bold leading-tight text-white font-heading md:text-xl">
-                    {{ Carbon\Carbon::parse($sorteo->end_date)->formatLocalized('%I:%M %p') }}
+                    {{ Carbon\Carbon::parse($sorteo->end_date)->isoFormat('h:mm a') }}
                 </h3>
                 <div class="w-full mt-4 md:w-44">
                     <a href="/sorteos/1" class="py-2 px-4  bg-white hover:bg-gray-100 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-black  w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">

@@ -62,6 +62,7 @@
                 <div class="max-w-sm mx-auto md:w-2/3">
                     <div class=" relative ">
                         <input
+                        required
                         name="name"
                         type="text"  class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                         placeholder="Nombre del sorteo"/>
@@ -76,6 +77,7 @@
                     <div class="max-w-sm mx-auto md:w-2/3">
                         <div class=" relative ">
                             <input
+                            required
                             name="end_date"
                             type="datetime-local"  class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                             placeholder="Fecha de finalización"/>
@@ -104,7 +106,7 @@
                     <div class="max-w-sm mx-auto space-y-5 md:w-2/3">
                         <div>
                             <div class=" relative ">
-                                <input  type="number" name="tickets"    class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                <input required  type="number" name="tickets"    class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                                 placeholder="Cantidad de boletos"/>
                                 </div>
                             </div>

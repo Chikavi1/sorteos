@@ -45,7 +45,7 @@
                 </div>
                 <div class="grid grid-cols-12">
                     <div class="col-span-5 col-start-2">
-                        <img id="pic2" style="max-height:13em;min-height:13em;object-fit: cover;" src="{{ URL::asset('public/photos/'.$sorteo->photo2) }}" alt="imagen 2">
+                        <img id="pic2" style="max-height:13em;min-height:13em;object-fit: cover;" src="{{ $sorteo->photo2?URL::asset('public/photos/'.$sorteo->photo2):'https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg' }}" alt="imagen 2">
 
                     </div>
                     <div class="col-span-6 text-center">
@@ -57,7 +57,7 @@
 
                 <div class="grid grid-cols-12 mt-2">
                     <div class="col-span-5 col-start-2">
-                        <img id="pic3" src="{{ URL::asset('public/photos/'.$sorteo->photo3) }}" alt="photo 3">
+                        <img id="pic3" src="{{ $sorteo->photo3?URL::asset('public/photos/'.$sorteo->photo3):'https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg' }}" alt="photo 3">
                     </div>
                     <div class="col-span-6 text-center">
                         <h1>Imagen 3</h1>
@@ -68,7 +68,7 @@
 
                 <div class="grid grid-cols-12 mt-2">
                     <div class="col-span-5 col-start-2">
-                        <img id="pic4" src="{{ URL::asset('public/photos/'.$sorteo->photo4) }}" alt="photo4">
+                        <img id="pic4" src="{{ $sorteo->photo4?URL::asset('public/photos/'.$sorteo->photo4):'https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg' }}" alt="photo4">
                     </div>
                     <div class="col-span-6 text-center">
                         <h1>Imagen 4</h1>
@@ -79,7 +79,7 @@
 
                 <div class="grid grid-cols-12 mt-2">
                     <div class="col-span-5 col-start-2">
-                        <img id="pic5" src="{{ URL::asset('public/photos/'.$sorteo->photo5) }}" alt="photo 5">
+                        <img id="pic5" src="{{ $sorteo->photo5?URL::asset('public/photos/'.$sorteo->photo5):'https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg' }}" alt="photo 5">
                     </div>
                     <div class="col-span-6 text-center">
                         <h1>Imagen 5</h1>

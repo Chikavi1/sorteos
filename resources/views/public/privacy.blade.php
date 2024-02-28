@@ -1,6 +1,6 @@
 @include('layouts.app')
 
-<p>
+<p class="p-4 text-xl">
     AVISO DE PRIVACIDAD
 
 Sorteos Osorio, conocido como sorteososorio.com, es responsable del uso y protección de sus datos personales. A continuación, le proporcionamos la información relevante:

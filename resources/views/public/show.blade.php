@@ -386,7 +386,7 @@
       </div>
       <div class="flex">
         <p class="mr-1 text-gray-800">Correo:</p>
-        <a href="mailto:sorteososorio@gmail.com" aria-label="Our email" title="Our email" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">sorteosorio@gmail.com</a>
+        <a href="mailto:sorteososorio@gmail.com" aria-label="Our email" title="Our email" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">sorteososorio@gmail.com</a>
       </div>
       <div class="flex">
         <p class="mr-1 text-gray-800">Dirección:</p>

@@ -18,9 +18,9 @@
       <div class="col-span-12 md:col-span-3 mx-4">
       <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
-          alt="Office"
-          src="https://sorteososorio.com/img/santander.png"
-          class="p-6 h-42"
+        alt="Office"
+        src="https://i.ibb.co/xmQ6qcG/image.png"
+        class=" h-24"
         />
 
         <div class="bg-white p-4 sm:p-6">
@@ -55,9 +55,9 @@
     <div class="col-span-12 md:col-span-3 px-4">
       <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
-          alt="Office"
-          src="https://sorteososorio.com/img/bbva.png"
-          class="p-6 h-42"
+        alt="Office"
+        src="https://i.ibb.co/RSXpQR5/image.png"
+        class="h-24"
         />
 
         <div class="bg-white p-4 sm:p-6">

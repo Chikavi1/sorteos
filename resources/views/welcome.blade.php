@@ -164,8 +164,8 @@
     <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
       <img
         alt="Office"
-        src="{{asset('img/santander.png')}}"
-        class="p-6 h-42"
+        src="https://i.ibb.co/xmQ6qcG/image.png"
+        class=" h-24"
       />
 
       <div class="bg-white p-4 sm:p-6">
@@ -201,8 +201,8 @@
     <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
       <img
         alt="Office"
-        src="{{asset('img/bbva.png')}}"
-        class="p-6 h-42"
+        src="https://i.ibb.co/RSXpQR5/image.png"
+        class="h-24"
       />
 
       <div class="bg-white p-4 sm:p-6">

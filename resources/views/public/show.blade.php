@@ -1,19 +1,24 @@
 @include('layouts.app')
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 @if($sorteo != null)
 
 {{-- footer --}}
+
+@php
+    $count = 0;
+@endphp
   <div class="grid grid-cols-12 gap-4 mx-3">
 
       <div class="col-span-12 md:col-span-5 md:col-start-2 md:mt-4">
               <ul
               class="bxslider overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
-                  @if($sorteo->photo)
+                  @if($sorteo->photo != null)
+                  @php
+                      $count += 1;
+                  @endphp
                       <li>
                           <img
                           alt="Office"
@@ -21,8 +26,11 @@
                           class="h-72 w-full object-cover"/>
                       </li>
                   @endif
-                  @if($sorteo->photo2)
-                      <li>
+                  @if($sorteo->photo2 != null)
+                  @php
+                     $count += 1;
+                  @endphp
+                  <li>
                           <img
                           alt="Office"
                           src="{{ URL::asset('public/photos/'.$sorteo->photo2) }}"
@@ -30,8 +38,11 @@
                       </li>
                   @endif
 
-                  @if($sorteo->photo3)
-                      <li>
+                  @if($sorteo->photo3 != null)
+                    @php
+                    $count += 1;
+                @endphp
+                  <li>
                           <img
                           alt="Office"
                           src="{{ URL::asset('public/photos/'.$sorteo->photo3) }}"
@@ -39,7 +50,10 @@
                       </li>
                   @endif
 
-                  @if($sorteo->photo4)
+                  @if($sorteo->photo4 != null)
+                  @php
+                  $count += 1;
+              @endphp
                       <li>
                           <img
                           alt="Office"
@@ -48,7 +62,10 @@
                       </li>
                   @endif
 
-                  @if($sorteo->photo5)
+                  @if($sorteo->photo5 != null)
+                  @php
+                  $count += 1;
+              @endphp
                       <li>
                           <img
                           alt="Office"
@@ -58,7 +75,6 @@
                   @endif
               </ul>
       </div>
-
 
       <div  class="col-span-12 md:col-span-5">
           <div class="p-4 sm:p-6">
@@ -195,13 +211,23 @@
 
   <script>
     $(document).ready(function(){
-        $('.bxslider').bxSlider({
+        var coverSlider =  $('.bxslider').bxSlider({
             auto: ($(".bxslider li").length > 1) ? true: false,
             pager: ($(".bxslider li").length > 1) ? true: false,
             controls: false,
             maxSlides: $(".bxslider li").length,
 
         });
+
+        if({{$count}} ===  1){
+            coverSlider.destroySlider();
+        }
+
+        // if ($(".bxslider li").length > 1) {
+        //     coverSlider.reloadSlider();
+        // } else {
+        // }
+
         var arraySelected = [];
     });
 

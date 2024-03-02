@@ -18,6 +18,7 @@ class Sorteos extends Model
         'photo4',
         'photo5',
         'title',
+        'cta',
         'description',
         'tickets',
         'end_date',

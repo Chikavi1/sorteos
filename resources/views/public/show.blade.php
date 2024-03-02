@@ -76,20 +76,20 @@
               </ul>
       </div>
 
+
       <div  class="col-span-12 md:col-span-5">
+          <div class="p-4 -mt-6 md:mt-5 w-full text-white red-juan">
+            <h2 class="text-3xl font-bold capitalize md:text-2xl my-4" >
+                {{$sorteo->title}}
+            </h2>
+          </div>
           <div class="p-4 sm:p-6">
-              <h2 class="text-xl md:text-2xl my-4" style="color:orange">¡Super promoción!</h2>
-              <a href="#">
-              <h3 class="text-lg font-medium text-gray-900">
-                  {{$sorteo->title}}
-              </h3>
-              </a>
 
               <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
                   {{$sorteo->description}}
               </p>
 
-              <h1 class="font-bold text-2xl mt-2 md:text-4xl text-green-600">¡¡Boleto a solo {{$sorteo->pricing}} pesos!!</h1>
+              <h1 class="font-bold text-2xl mt-2 md:text-4xl text-green-600">{{$sorteo->cta}}</h1>
           </div>
       </div>
 
@@ -165,11 +165,15 @@
                                                           <input required name="city" type="text" id="search-form-name" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Ciudad"/>
                                                           </div>
                                                       </div>
+                                                      <div class=" relative ">
+                                                        <input required name="state" type="text" id="search-form-name" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Estado"/>
+                                                        </div>
+                                                    </div>
                                                       <input type="hidden" id="nt-id" name="ntid">
                                                       <input type="hidden" id="id_sorteo" name="id_sorteo" value="{{$sorteo->id}}">
 
                                                       <div>
-                                                          <span class="block w-full rounded-md shadow-sm">
+                                                          <span class="mt-2 block w-full rounded-md shadow-sm">
                                                               <button type="form" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                                                                   Reservar
                                                               </button>
@@ -274,8 +278,8 @@
         });
         @if($sorteo)
         const Totalnumbers = Array({{$sorteo->tickets}}).fill(1).map((n, i) => n + i)
-        var restantes = Totalnumbers.filter(el => !arrayApiSelected.includes(el));
-    @endif
+            var restantes = Totalnumbers.filter(el => !arrayApiSelected.includes(el));
+         @endif
     }
 
     function random(){
@@ -288,17 +292,13 @@
         }
     }
 
-    initTickets()
 
 
     function selectTicket(id){
-
-        var afterselectuser = arrayApiSelected.indexOf(id);
-        if (afterselectuser !== -1) {
+        if (arrayApiSelected.includes(''+id+'')) {
             return;
-        }
-
-        var index = arraySelected.indexOf(id);
+        }else{
+            var index = arraySelected.indexOf(id);
             if (index !== -1) {
                 deleteTicket(id);
             }else{
@@ -307,6 +307,7 @@
                 $("#ticket-"+id).addClass('red-juan text-red-juan');
                 $( "#parrays" ).append( "<span id='text-"+id+"' onclick='deleteTicket("+id+")'>#"+ zeroPad(id, 4)+" </span>" );
             }
+        }
     }
     }
 
@@ -317,7 +318,6 @@
         caca = arraySelected;
 
         caca.forEach(element => {
-            console.log(element);
             $("#ticket-"+element).removeClass('red-juan text-red-juan');
             $( "#text-"+element).remove();
         });
@@ -330,7 +330,6 @@
 
     function deleteTicket(id){
         var index = arraySelected.indexOf(id);
-        console.log(id)
         if (index !== -1) {
             arraySelected.splice(index, 1);
             $("#ticket-"+id).removeClass('red-juan text-red-juan');
@@ -358,6 +357,9 @@
             modal.hide();
         },200);
     });
+
+    initTickets()
+
 </script>
 
 
@@ -407,8 +409,8 @@
     <div class="space-y-2 text-sm">
       <p class="text-base font-bold tracking-wide text-gray-900">Contacto</p>
       <div class="flex">
-        <p class="mr-1 text-gray-800">Celular:</p>
-        <a href="tel:850-123-5021" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">3332707927</a>
+        <p class="mr-1 text-gray-800">WhatsApp:</p>
+        <a class="text-blue-800 font-bold underline" href="https://api.whatsapp.com/send?phone=5213332707927" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">3332707927</a>
       </div>
       <div class="flex">
         <p class="mr-1 text-gray-800">Correo:</p>

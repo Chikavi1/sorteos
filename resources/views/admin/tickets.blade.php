@@ -48,6 +48,10 @@
                             </th>
 
                             <th scope="col" class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
+                                Estado
+                            </th>
+
+                            <th scope="col" class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
                                 Fecha
                             </th>
                             <th scope="col" class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
@@ -83,10 +87,15 @@
                                         {{$item->city}}
                                     </p>
                                 </td>
+                                <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        {{$item->state}}
+                                    </p>
+                                </td>
 
                                 <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        {{   Carbon\Carbon::parse($item->created_at)->formatLocalized('%d %B %Y ') }} <br>
+                                        {{ Carbon\Carbon::parse($item->created_at)->formatLocalized('%d %B %Y ') }} <br>
                                         {{ Carbon\Carbon::parse($item->created_at)->isoFormat('h:mm a') }}
                                     </p>
                                 </td>

@@ -47,6 +47,7 @@ class SorteosController extends Controller
                 'id_sorteo'         => $request->id_sorteo,
                 'name'              => $request->get('name'),
                 'city'              => $request->get('city'),
+                'state'              => $request->get('state'),
                 'cellphone'         => $request->get('cellphone'),
                 'status'            => 1
             ]);
@@ -146,7 +147,9 @@ class SorteosController extends Controller
         SEO::opengraph()->addImage(asset('img/caca.png'));
         SEO::twitter()->setImage(asset('img/caca.png'));
         $sorteo = Sorteos::findOrFail($id);
+
         $tickets = Tickets::where('id_sorteo',$id)->get();
+
         $cantidad = $tickets->where('status',2)->count();
         $total_dinero = $cantidad * $sorteo->pricing;
         $boletaje = $sorteo->tickets;
@@ -179,6 +182,8 @@ class SorteosController extends Controller
             'tickets'           => $request->get('tickets'),
             'end_date'          => $request->get('end_date'),
             'pricing'           => $request->get('pricing'),
+            'title'             => $request->get('title'),
+            'cta'               => $request->get('cta'),
             'status'            => 1
         ]);
 
@@ -258,6 +263,9 @@ class SorteosController extends Controller
 
         $sorteo = Sorteos::findOrFail($request->id);
         $sorteo->name = $request->name;
+        $sorteo->title = $request->title;
+        $sorteo->cta = $request->cta;
+
         $sorteo->end_date = $request->end_date;
         $sorteo->description = $request->description;
         $sorteo->tickets = $request->tickets;

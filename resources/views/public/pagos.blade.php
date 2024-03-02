@@ -8,7 +8,7 @@
       <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
           alt="Office"
-          src="{{asset('img/santander.png')}}"
+          src="https://i.ibb.co/xmQ6qcG/image.png"
           class="p-6 h-42"
         />
 
@@ -45,7 +45,7 @@
       <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
           alt="Office"
-          src="{{asset('img/bbva.png')}}"
+          src="https://i.ibb.co/RSXpQR5/image.png"
           class="p-6 h-42"
         />
 

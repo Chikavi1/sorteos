@@ -18,8 +18,8 @@
       <div class="space-y-2 text-sm">
         <p class="text-base font-bold tracking-wide text-gray-900">Contacto</p>
         <div class="flex">
-          <p class="mr-1 text-gray-800">Celular:</p>
-          <a href="tel:850-123-5021" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">3332707927</a>
+          <p class="mr-1 text-gray-800">WhatsApp:</p>
+          <a class="text-blue-800 font-bold underline" href="https://api.whatsapp.com/send?phone=5213332707927" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">3332707927</a>
         </div>
         <div class="flex">
           <p class="mr-1 text-gray-800">Correo:</p>

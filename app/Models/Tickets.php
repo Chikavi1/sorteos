@@ -18,6 +18,7 @@ class Tickets extends Model
         'cellphone',
         'id_sorteo',
         'city',
+        'state',
         'status'
     ];
 }

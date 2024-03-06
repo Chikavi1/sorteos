@@ -8,8 +8,8 @@ use Carbon\Carbon;
 
 class freeStatus extends Command
 {
-    protected $signature = 'demo:cron';
 
+    protected $signature = 'app:free-status';
 
     protected $description = 'Command description';
     public function handle()

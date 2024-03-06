@@ -30,7 +30,7 @@ class DemoCron extends Command
 
 
         $statusPending = Tickets::where('status',2)->where('created_at', '<',
-        Carbon::now()->subHours(16)->toDateTimeString())->update(['status' => 1]);
+        Carbon::now()->subHours(16)->toDateTimeString())->update(['status' => 0]);
 
 
     }

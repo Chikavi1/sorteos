@@ -8,6 +8,8 @@ use App\Models\Tickets;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use SEO;
+use DB;
+use Carbon\Carbon;
 
 class SorteosController extends Controller
 {
@@ -87,7 +89,18 @@ class SorteosController extends Controller
         $ticketsSelected = [];
 
         if($sorteo !=  null){
+
             $tickets = Tickets::where('id_sorteo',$sorteo->id)->where('status','!=',0)->pluck('folio');
+
+            $tickets = DB::table('tickets')->where('id_sorteo',$sorteo->id)->where(function ($query) {
+
+                $query->where('status', '2');
+                $query->orWhere(function ($subquery) {
+                    $subquery->where('status', '1')
+                        ->where('created_at', '>', Carbon::now()->subHours(16));
+                });
+            })->pluck('folio');
+
             foreach($tickets as  $value) {
                 $str = ltrim($value, "0");
                 array_push($ticketsSelected,$str);
@@ -148,7 +161,18 @@ class SorteosController extends Controller
         SEO::twitter()->setImage(asset('img/caca.png'));
         $sorteo = Sorteos::findOrFail($id);
 
-        $tickets = Tickets::where('id_sorteo',$id)->get();
+        // $tickets = Tickets::where('id_sorteo',$id)->get();
+
+        $tickets = DB::table('tickets')->where('id_sorteo',$sorteo->id)->where(function ($query) {
+
+            $query->where('status', '2');
+            $query->orWhere(function ($subquery) {
+                $subquery->where('status', '1')
+                    ->where('created_at', '>', Carbon::now()->subHours(16));
+            });
+        })->get();
+
+
 
         $cantidad = $tickets->where('status',2)->count();
         $total_dinero = $cantidad * $sorteo->pricing;

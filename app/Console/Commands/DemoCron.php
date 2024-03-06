@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\Tickets;
+use Carbon\Carbon;
 
 class DemoCron extends Command
 {
@@ -25,8 +27,11 @@ class DemoCron extends Command
      */
     public function handle()
     {
-        info("Cron Job running at ". now());
 
-        dd('caca');
+
+        $statusPending = Tickets::where('status',2)->where('created_at', '<',
+        Carbon::now()->subHours(16)->toDateTimeString())->update(['status' => 1]);
+
+
     }
 }

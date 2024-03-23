@@ -92,7 +92,7 @@ class SorteosController extends Controller
 
             $tickets = Tickets::where('id_sorteo',$sorteo->id)->where('status','!=',0)->pluck('folio');
 
-            $tickets = DB::table('tickets')->where('id_sorteo',$sorteo->id)->where(function ($query) {
+            $tickets = DB::table('Tickets')->where('id_sorteo',$sorteo->id)->where(function ($query) {
 
                 $query->where('status', '2');
                 $query->orWhere(function ($subquery) {

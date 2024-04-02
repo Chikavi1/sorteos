@@ -345,4 +345,24 @@ class SorteosController extends Controller
     {
         //
     }
+
+    public function deletePhoto($id_sorteo,$id_photo){
+        $sorteo = Sorteos::findOrFail($id_sorteo);
+        if($id_photo == 2){
+            $sorteo->photo2 = null;
+        }
+        if($id_photo == 3){
+            $sorteo->photo3 = null;
+        }
+        if($id_photo == 4){
+            $sorteo->photo4 = null;
+        }
+        if($id_photo == 5){
+            $sorteo->photo5 = null;
+        }
+
+        $sorteo->update();
+        return redirect('/sos/'.$sorteo->id);
+
+    }
 }

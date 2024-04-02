@@ -29,6 +29,8 @@ Route::post('/sa-login',[SorteosController::class,'login'])->name('admin.login')
 Route::get('/sos-admin',[SorteosController::class,'index'])->name('sorteos.index');
 Route::get('/sos/{id}',[SorteosController::class,'sorteo'])->name('sorteos.sorteo');
 Route::get('/sos-sorteos/create',[SorteosController::class,'create'])->name('sorteos.create');
+Route::get('/sos-deletep/{id_sorteo}/{id_photo}',[SorteosController::class,'deletePhoto'])->name('sorteos.deletePhoto');
+
 
 Route::get('/sos-tickets/{id}',[SorteosController::class,'tickets'])->name('sorteos.tickets');
 Route::get('/faq',[SorteosController::class,'faq'])->name('sorteos.faq');

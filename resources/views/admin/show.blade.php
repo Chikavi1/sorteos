@@ -51,7 +51,9 @@
                     <div class="col-span-6 text-center">
                         <h1>Imagen 2</h1>
                         <input type="file" accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp" value="{{$sorteo->photo2}}" oninput="pic2.src=window.URL.createObjectURL(this.files[0])"  placeholder="Ingresa imagen" name="photo2">
-                        <p>Haz clic para cambiarla</p>
+                        @if($sorteo->photo2)
+                        <a style="color:red;" href="/sos-deletep/{{$sorteo->id}}/2">Eliminar foto</a>
+                        @endif
                     </div>
                 </div>
 
@@ -62,7 +64,9 @@
                     <div class="col-span-6 text-center">
                         <h1>Imagen 3</h1>
                         <input type="file" accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp" value="{{$sorteo->photo3}}" oninput="pic3.src=window.URL.createObjectURL(this.files[0])"  placeholder="Ingresa imagen" name="photo3">
-                        <p>Haz clic para cambiarla</p>
+                        @if($sorteo->photo3)
+                        <a style="color:red;" href="/sos-deletep/{{$sorteo->id}}/3">Eliminar foto</a>
+                        @endif
                     </div>
                 </div>
 
@@ -73,7 +77,9 @@
                     <div class="col-span-6 text-center">
                         <h1>Imagen 4</h1>
                         <input type="file" accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp" value="{{$sorteo->photo4}}" oninput="pic4.src=window.URL.createObjectURL(this.files[0])"  placeholder="Ingresa imagen" name="photo4">
-                        <p>Haz clic para cambiarla</p>
+                        @if($sorteo->photo4)
+                        <a style="color:red;" href="/sos-deletep/{{$sorteo->id}}/4">Eliminar foto</a>
+                        @endif
                     </div>
                 </div>
 
@@ -84,7 +90,9 @@
                     <div class="col-span-6 text-center">
                         <h1>Imagen 5</h1>
                         <input type="file" accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp" value="{{$sorteo->photo5}}" oninput="pic5.src=window.URL.createObjectURL(this.files[0])"  placeholder="Ingresa imagen" name="photo5">
-                        <p>Haz clic para cambiarla</p>
+                        @if($sorteo->photo5)
+                        <a style="color:red;" href="/sos-deletep/{{$sorteo->id}}/5">Eliminar foto</a>
+                        @endif
                     </div>
                 </div>
 

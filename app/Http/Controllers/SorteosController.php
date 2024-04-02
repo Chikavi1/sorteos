@@ -56,7 +56,7 @@ class SorteosController extends Controller
             $ticket->save();
         }
 
-        $urllink = "https://api.whatsapp.com/send?phone=+523332707927&text=Sorteos+Osorio+%F0%9F%A4%91%0A%0AHola+soy+".$request->name."+de+".$request->city."+y+mi+n%C3%BAmero+de+tel%C3%A9fono+es+".$request->cellphone."%0A%0A%E2%9A%A0%EF%B8%8F+FOLIOS+%E2%9A%A0%EF%B8%8F%0A%0ARESERV%C3%89+".$amount."+BOLETOS%3A+".$tnids."+%0A%0AM%C3%A1s+informaci%C3%B3n+de+las+cuentas+para+pago%3A%0Ahttps%3A%2F%2Fwww.sorteososorio.com%2Fmetodospago%0A%0AFavor+de+enviarnos+el+comprobante+de+dep%C3%B3sito%0A%0A%E2%9A%A0+PARA+TRANSFERENCIAS+PONER+%C3%9ANICAMENTE+TU+NOMBRE+EN+EL+CONCEPTO+%E2%9A%A0";
+        $urllink = "https://api.whatsapp.com/send?phone=+523332707927&text=Sorteos+Osorio+%F0%9F%A4%91%0A%0AHola+soy+".$request->name."+de+".$request->city.",".$request->state."+y+mi+n%C3%BAmero+de+tel%C3%A9fono+es+".$request->cellphone."%0A%0A%E2%9A%A0%EF%B8%8F+FOLIOS+%E2%9A%A0%EF%B8%8F%0A%0ARESERV%C3%89+".$amount."+BOLETOS%3A+".$tnids."+%0A%0AM%C3%A1s+informaci%C3%B3n+de+las+cuentas+para+pago%3A%0Ahttps%3A%2F%2Fwww.sorteososorio.com%2Fmetodospago%0A%0AFavor+de+enviarnos+el+comprobante+de+dep%C3%B3sito%0A%0A%E2%9A%A0+PARA+TRANSFERENCIAS+PONER+%C3%9ANICAMENTE+TU+NOMBRE+EN+EL+CONCEPTO+%E2%9A%A0";
         return redirect('/success')->with('success', $urllink);
         }else{
             dd('error');
@@ -129,9 +129,22 @@ class SorteosController extends Controller
         if($request->isMethod('post')){
             if($sorteo){
                 if(strlen($request->search) > 5){
-                    $data = Tickets::where('cellphone',$request->search)->where('id_sorteo',$sorteo->id)->get();
+                    $data = Tickets::where('cellphone',$request->search)->where('id_sorteo',$sorteo->id)->where(function ($query) {
+                        $query->where('status', '2');
+                        $query->orWhere(function ($subquery) {
+                            $subquery->where('status', '1')
+                                ->where('created_at', '>', Carbon::now()->subHours(16));
+                        });
+                    })->get();
+
                 }else{
-                   $data = Tickets::where('folio',$request->search)->where('id_sorteo',$sorteo->id)->get();
+                   $data = Tickets::where('folio',$request->search)->where('id_sorteo',$sorteo->id)->where(function ($query) {
+                    $query->where('status', '2');
+                    $query->orWhere(function ($subquery) {
+                        $subquery->where('status', '1')
+                            ->where('created_at', '>', Carbon::now()->subHours(16));
+                    });
+                })->get();
                 }
 
                 if(count($data) == 0){

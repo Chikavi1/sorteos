@@ -215,6 +215,8 @@ class SorteosController extends Controller
     {
         $sorteo = new Sorteos([
             'name'              => $request->get('name'),
+            'title'              => $request->get('title'),
+            'cta'              => $request->get('cta'),
             'description'       => $request->get('description'),
             'tickets'           => $request->get('tickets'),
             'end_date'          => $request->get('end_date'),

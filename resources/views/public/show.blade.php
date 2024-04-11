@@ -235,7 +235,7 @@
         var arraySelected = [];
     });
 
-
+    var limit = 1;
     var arrayApiSelected =  {!! $tickets !!}
     var arraySelected = [];
 
@@ -302,7 +302,7 @@
             if (index !== -1) {
                 deleteTicket(id);
             }else{
-            if(arraySelected.length < 5){
+            if(arraySelected.length < limit){
                 arraySelected.push(id);
                 $("#ticket-"+id).addClass('red-juan text-red-juan');
                 $( "#parrays" ).append( "<span id='text-"+id+"' onclick='deleteTicket("+id+")'>#"+ zeroPad(id, 4)+" </span>" );

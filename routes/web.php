@@ -32,7 +32,7 @@ Route::get('/sos-sorteos/create',[SorteosController::class,'create'])->name('sor
 Route::get('/sos-deletep/{id_sorteo}/{id_photo}',[SorteosController::class,'deletePhoto'])->name('sorteos.deletePhoto');
 
 
-Route::get('/sos-tickets/{id}',[SorteosController::class,'tickets'])->name('sorteos.tickets');
+Route::any('/sos-tickets/{id}',[SorteosController::class,'tickets'])->name('sorteos.tickets');
 Route::get('/faq',[SorteosController::class,'faq'])->name('sorteos.faq');
 Route::post('/book',[SorteosController::class,'book'])->name('sorteos.book');
 Route::post('/sorteo-store',[SorteosController::class,'store'])->name('admin.store');

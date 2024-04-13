@@ -169,23 +169,31 @@ class SorteosController extends Controller
         return view('admin.show',compact('sorteo'));
       }
 
-      public function tickets($id){
+      public function tickets($id,Request $request){
         SEO::opengraph()->addImage(asset('img/caca.png'));
         SEO::twitter()->setImage(asset('img/caca.png'));
         $sorteo = Sorteos::findOrFail($id);
 
-        // $tickets = Tickets::where('id_sorteo',$id)->get();
+        if($request->search){
+            $tickets = DB::table('Tickets')->where('folio','LIKE', '%'.$request->search.'%')->where('id_sorteo',$sorteo->id)->where(function ($query) {
+                $query->where('status', '2');
+                $query->orWhere(function ($subquery) {
+                    $subquery->where('status', '1')
+                        ->where('created_at', '>', Carbon::now()->subHours(16));
+                });
+            })->get();
+            // dd($tickets);
 
-        $tickets = DB::table('Tickets')->where('id_sorteo',$sorteo->id)->where(function ($query) {
+        }else{
+            $tickets = DB::table('Tickets')->where('id_sorteo',$sorteo->id)->where(function ($query) {
 
-            $query->where('status', '2');
-            $query->orWhere(function ($subquery) {
-                $subquery->where('status', '1')
-                    ->where('created_at', '>', Carbon::now()->subHours(16));
-            });
-        })->get();
-
-
+                $query->where('status', '2');
+                $query->orWhere(function ($subquery) {
+                    $subquery->where('status', '1')
+                        ->where('created_at', '>', Carbon::now()->subHours(16));
+                });
+            })->get();
+        }
 
         $cantidad = $tickets->where('status',2)->count();
         $total_dinero = $cantidad * $sorteo->pricing;

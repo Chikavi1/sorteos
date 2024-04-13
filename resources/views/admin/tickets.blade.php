@@ -24,6 +24,12 @@
     </div>
 </div>
 
+<form method="POST" action="{{ route('sorteos.tickets',$sorteo->id) }}">
+    @csrf
+    <p class="text-center mt-4">
+        <input placeholder="Filtrar por número de boleto" class="bg-gray-200 w-72 p-2 rounded-lg " name="search" type="text" />
+    </p>
+</form>
 
 <div class="container w-full px-4 mx-auto sm:px-8">
     <div class="py-8">

@@ -97,7 +97,7 @@ class SorteosController extends Controller
                 $query->where('status', '2');
                 $query->orWhere(function ($subquery) {
                     $subquery->where('status', '1')
-                        ->where('created_at', '>', Carbon::now()->subHours(16));
+                        ->where('created_at', '>', Carbon::now()->subHours(20));
                 });
             })->pluck('folio');
 
@@ -133,7 +133,7 @@ class SorteosController extends Controller
                         $query->where('status', '2');
                         $query->orWhere(function ($subquery) {
                             $subquery->where('status', '1')
-                                ->where('created_at', '>', Carbon::now()->subHours(16));
+                                ->where('created_at', '>', Carbon::now()->subHours(20));
                         });
                     })->get();
 
@@ -142,7 +142,7 @@ class SorteosController extends Controller
                     $query->where('status', '2');
                     $query->orWhere(function ($subquery) {
                         $subquery->where('status', '1')
-                            ->where('created_at', '>', Carbon::now()->subHours(16));
+                            ->where('created_at', '>', Carbon::now()->subHours(20));
                     });
                 })->get();
                 }
@@ -179,7 +179,7 @@ class SorteosController extends Controller
                 $query->where('status', '2');
                 $query->orWhere(function ($subquery) {
                     $subquery->where('status', '1')
-                        ->where('created_at', '>', Carbon::now()->subHours(16));
+                        ->where('created_at', '>', Carbon::now()->subHours(20));
                 });
             })->get();
             // dd($tickets);
@@ -190,7 +190,7 @@ class SorteosController extends Controller
                 $query->where('status', '2');
                 $query->orWhere(function ($subquery) {
                     $subquery->where('status', '1')
-                        ->where('created_at', '>', Carbon::now()->subHours(16));
+                        ->where('created_at', '>', Carbon::now()->subHours(20));
                 });
             })->get();
         }

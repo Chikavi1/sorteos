@@ -175,13 +175,7 @@ class SorteosController extends Controller
         $sorteo = Sorteos::findOrFail($id);
 
         if($request->search){
-            $tickets = DB::table('Tickets')->where('folio','LIKE', '%'.$request->search.'%')->where('id_sorteo',$sorteo->id)->where(function ($query) {
-                $query->where('status', '2');
-                $query->orWhere(function ($subquery) {
-                    $subquery->where('status', '1')
-                        ->where('created_at', '>', Carbon::now()->subHours(20));
-                });
-            })->get();
+            $tickets = DB::table('Tickets')->where('folio','LIKE', '%'.$request->search.'%')->where('id_sorteo',$sorteo->id)->get();
             // dd($tickets);
 
         }else{

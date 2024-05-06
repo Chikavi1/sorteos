@@ -10,6 +10,18 @@
 @php
     $count = 0;
 @endphp
+
+@if ($errors->any())
+    <div class="bg-black px-4 py-3 text-white">
+        <p class="text-center text-xl font-medium">
+            ¡Ese boleto ya fue seleccionado por alguien más!
+        </p>
+      </div>
+@endif
+
+
+
+
   <div class="grid grid-cols-12 gap-4 mx-3">
 
       <div class="col-span-12 md:col-span-5 md:col-start-2 md:mt-4">

@@ -43,6 +43,16 @@ class SorteosController extends Controller
             $folio = str_pad($value, 4, "0", STR_PAD_LEFT);
             $tnids .=  $folio.',';
 
+            $existingTicket = Tickets::where('id_sorteo', $request->id_sorteo)
+            ->where('folio', $folio)
+            ->exists();
+
+            if ($existingTicket) {
+                return redirect()->back()->withErrors(['message' => 'Alguien reservo ese boleto ya'])->withInput();
+            }
+
+
+
             // crear
             $ticket = new Tickets([
                 'folio'             => $folio,

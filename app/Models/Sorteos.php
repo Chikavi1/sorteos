@@ -26,5 +26,6 @@ class Sorteos extends Model
         'end_date',
         'winner',
         'pricing',
+        'limit_tickets'
     ];
 }

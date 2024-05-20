@@ -247,7 +247,7 @@
         var arraySelected = [];
     });
 
-    var limit = 1;
+    var limit = {{$sorteo->limit_tickets}};
     var arrayApiSelected =  {!! $tickets !!}
     var arraySelected = [];
 

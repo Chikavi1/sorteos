@@ -229,12 +229,11 @@ class SorteosController extends Controller
             'name'              => $request->get('name'),
             'title'              => $request->get('title'),
             'cta'              => $request->get('cta'),
+            'end_date'          => $request->get('end_date'),
             'description'       => $request->get('description'),
             'tickets'           => $request->get('tickets'),
-            'end_date'          => $request->get('end_date'),
             'pricing'           => $request->get('pricing'),
-            'title'             => $request->get('title'),
-            'cta'               => $request->get('cta'),
+            'limit_tickets'     => $request->get('limit_tickets'),
             'status'            => 1
         ]);
 
@@ -321,6 +320,7 @@ class SorteosController extends Controller
         $sorteo->description = $request->description;
         $sorteo->tickets = $request->tickets;
         $sorteo->pricing = $request->pricing;
+        $sorteo->limit_tickets = $request->limit_tickets;
 
         if($request->file('photo1')){
             $file= $request->file('photo1');

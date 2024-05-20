@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('sorteos', function (Blueprint $table) {
+        Schema::table('Sorteos', function (Blueprint $table) {
             $table->integer('limit_tickets')->default(0); // Puedes ajustar el tipo de dato y el valor por defecto según tus necesidades
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('sorteos', function (Blueprint $table) {
+        Schema::table('Sorteos', function (Blueprint $table) {
             $table->dropColumn('limit_tickets');
         });
     }
